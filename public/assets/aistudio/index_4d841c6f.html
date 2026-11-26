@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MahasiswaHub — Portal Website Penting &amp; Produktivitas Mahasiswa</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="badge-logo">MHS·HUB</span>
+      <div>
+        <h1>Portal Website Penting Mahasiswa</h1>
+        <p class="subtitle">Direktori terkurasi untuk riset ilmiah, catatan kuliah, penulisan, coding, data &amp; karier</p>
+      </div>
+    </div>
+    <div class="header-actions">
+      <input type="search" id="search-input" placeholder="Cari website, fungsi, atau tag (mis. jurnal, LaTeX, magang)..." aria-label="Cari website mahasiswa" />
+      <button id="btn-bookmarks-only" class="ghost-btn" title="Tampilkan hanya website yang disimpan">⭐ Favorit (<span id="fav-count">0</span>)</button>
+    </div>
+  </header>
+
+  <section class="filter-bar">
+    <div class="category-pills" id="category-pills">
+      <button class="pill active" data-cat="all">Semua Kategori</button>
+      <button class="pill" data-cat="riset">📚 Riset &amp; Jurnal</button>
+      <button class="pill" data-cat="catatan">🗂️ Catatan &amp; Kolaborasi</button>
+      <button class="pill" data-cat="penulisan">✍️ Penulisan &amp; Presentasi</button>
+      <button class="pill" data-cat="teknis">💻 Coding, Data &amp; Skill</button>
+      <button class="pill" data-cat="karier">🎓 Karier, Magang &amp; Beasiswa</button>
+    </div>
+    <div class="quick-presets">
+      <span class="preset-label">Paket Cepat:</span>
+      <button class="preset-btn" data-preset="skripsi">🎯 Mode Skripsi</button>
+      <button class="preset-btn" data-preset="coding">⚡ Mode Tech &amp; Data</button>
+      <button class="preset-btn" data-preset="karier">🚀 Mode Magang &amp; CV</button>
+      <button class="preset-btn" data-preset="reset">↺ Reset</button>
+    </div>
+  </section>
+
+  <main class="main-layout">
+    <section class="directory-section">
+      <div class="section-head">
+        <h2 id="result-title">Semua Website Penting Mahasiswa</h2>
+        <span id="result-count" class="muted">Menampilkan 17 platform</span>
+      </div>
+      <div id="cards-grid" class="cards-grid"></div>
+    </section>
+
+    <aside class="sidebar">
+      <div class="card">
+        <h2>🧭 Alur Kerja Rekomendasi</h2>
+        <div class="workflow-tabs">
+          <button class="wf-btn active" data-wf="skripsi">Skripsi</button>
+          <button class="wf-btn" data-wf="tugas">Tugas &amp; Presentasi</button>
+          <button class="wf-btn" data-wf="karier">Persiapan Karier</button>
+        </div>
+        <ol id="workflow-steps" class="workflow-list"></ol>
+      </div>
+
+      <div class="card">
+        <h2>➕ Tambah Website Kampus / Pribadi</h2>
+        <form id="custom-site-form" class="custom-form">
+          <input type="text" id="custom-name" placeholder="Nama Website (mis. SIAKAD / Perpus Kampus)" required />
+          <input type="url" id="custom-url" placeholder="https://..." required />
+          <select id="custom-cat">
+            <option value="riset">Riset &amp; Jurnal</option>
+            <option value="catatan">Catatan &amp; Kolaborasi</option>
+            <option value="penulisan">Penulisan &amp; Presentasi</option>
+            <option value="teknis">Coding, Data &amp; Skill</option>
+            <option value="karier">Karier, Magang &amp; Beasiswa</option>
+          </select>
+          <input type="text" id="custom-desc" placeholder="Kegunaan singkat..." required />
+          <button type="submit" class="primary-btn">Simpan ke Portal</button>
+        </form>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <p>MahasiswaHub — Semua bookmark &amp; tautan kustom tersimpan otomatis di browser Anda (`localStorage`). Siap di-hosting di GitHub Pages.</p>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>

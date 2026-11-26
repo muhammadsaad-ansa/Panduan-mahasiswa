@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@media print {
+  /* Hide UI elements during print / PDF export */
+  header, 
+  footer, 
+  aside, 
+  button, 
+  select, 
+  input, 
+  .print\:hidden {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+    color: #111827 !important;
+    font-family: "Times New Roman", Times, Georgia, serif !important;
+    font-size: 12pt !important;
+    line-height: 1.6 !important;
+    margin: 0 !important;
+    padding: 20mm !important;
+  }
+
+  main {
+    display: block !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Style the editor container for professional thesis export */
+  .bg-\[\#111827\], .bg-\[\#172033\], .bg-\[\#1e293b\] {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  textarea {
+    border: none !important;
+    background: transparent !important;
+    color: #111827 !important;
+    font-family: "Times New Roman", Times, Georgia, serif !important;
+    font-size: 12pt !important;
+    line-height: 1.8 !important;
+    resize: none !important;
+    height: auto !important;
+    overflow: visible !important;
+    padding: 0 !important;
+  }
+
+  /* Academic Document Header for Print */
+  @page {
+    size: A4;
+    margin: 25mm 20mm 25mm 25mm;
+  }
+}
